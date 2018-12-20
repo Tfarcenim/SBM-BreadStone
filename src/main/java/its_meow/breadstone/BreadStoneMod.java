@@ -21,7 +21,7 @@ public class BreadStoneMod {
 	@SidedProxy(clientSide = Ref.CLIENT_PROXY_C, serverSide = Ref.SERVER_PROXY_C)
 	public static ISidedProxy proxy;
 
-	public static CreativeTab tab = new CreativeTab("Bread Stone");
+	public static CreativeTab tab = new CreativeTab("BreadStone");
 
 	public static Logger logger;
 	

@@ -1,0 +1,22 @@
+{
+    "_comment": [
+        "Clumps stale bread together into a solid stone block"
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "group": "breadstone",
+    "ingredients": [
+           {
+            "item": "minecraft:bread",
+            "data": 0
+        },
+        {
+            "item": "minecraft:sand",
+            "data": 0
+        }
+    ],
+    "result": {
+        "item": "breadstone:stalebread",
+        "data": 0,
+        "count": 1
+    }
+}

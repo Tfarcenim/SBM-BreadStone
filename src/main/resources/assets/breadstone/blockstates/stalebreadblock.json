@@ -3,6 +3,9 @@
     "variants": {
         "normal": [{
            "model": "breadstone:stalebreadblock"
+        }],
+        "inventory": [{
+           "model": "breadstone:stalebreadblock"
         }]
     }
 }

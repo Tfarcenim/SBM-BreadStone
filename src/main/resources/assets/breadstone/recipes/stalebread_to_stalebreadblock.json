@@ -3,6 +3,7 @@
 	    "Clumps stale bread together into a solid stone block"
 	],
 	"type": "minecraft:crafting_shaped",
+	"group": "breadstone",
     "pattern": [
 		"XX",
 		"XX"
@@ -16,6 +17,6 @@
 	"result": {
 	    "item": "breadstone:stalebreadblock",
 		"data": 0,
-		"count": 1
+		"count": 4
 	}
 }
