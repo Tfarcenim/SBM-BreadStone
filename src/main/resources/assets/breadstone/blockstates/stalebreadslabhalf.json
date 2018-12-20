@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom,variant=default": { "model": "breadstone:stalebreadslabbottom" },
+        "half=top,variant=default": { "model": "breadstone:stalebreadslabtop" }
+    }
+}

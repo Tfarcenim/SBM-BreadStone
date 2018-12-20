@@ -6,10 +6,12 @@ import java.util.Set;
 import com.google.common.base.Preconditions;
 
 import its_meow.breadstone.common.block.BlockStaleBread;
+import its_meow.breadstone.common.block.BlockStaleBreadSlab;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemSlab;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -23,6 +25,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class BlockRegistry {
 	
 	public static BlockStaleBread stalebreadblock = new BlockStaleBread();
+	public static BlockStaleBreadSlab stalebreadslabhalf = new BlockStaleBreadSlab.Half();
+	public static BlockStaleBreadSlab stalebreadslabdouble = new BlockStaleBreadSlab.Double();
 
 	@Mod.EventBusSubscriber
 	public static class RegistrationHandler {
@@ -39,6 +43,8 @@ public class BlockRegistry {
 
 			final Block[] blocks = {
 					stalebreadblock,
+					stalebreadslabhalf,
+					stalebreadslabdouble
 			};
 
 			registry.registerAll(blocks);
@@ -53,7 +59,7 @@ public class BlockRegistry {
 		@SubscribeEvent
 		public static void registerItemBlocks(final RegistryEvent.Register<Item> event) {
 			final ItemBlock[] items = {
-					new ItemBlock(stalebreadblock)
+					new ItemBlock(stalebreadblock),
 			};
 
 			final IForgeRegistry<Item> registry = event.getRegistry();
@@ -64,11 +70,16 @@ public class BlockRegistry {
 				registry.register(item.setRegistryName(registryName));
 				ITEM_BLOCKS.add(item);
 			}
+			
+			// Not of type ItemBlock
+			registry.register(new ItemSlab(stalebreadslabhalf, stalebreadslabhalf, stalebreadslabdouble).setRegistryName(stalebreadslabhalf.getRegistryName()));
+			
 		}
 
 		@SubscribeEvent
 		public static void registerItemBlockModels(final ModelRegistryEvent event) {
 			initModel(stalebreadblock, 0);
+			initModel(stalebreadslabhalf, 0);
 		}
 
 
