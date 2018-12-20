@@ -2,6 +2,7 @@ package its_meow.breadstone.common.block;
 
 import java.util.Random;
 
+import its_meow.breadstone.BreadStoneMod;
 import its_meow.breadstone.init.BlockRegistry;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
@@ -32,6 +33,7 @@ public abstract class BlockStaleBreadSlab extends BlockSlab {
 		
 		this.setDefaultState(iblockstate);
 		this.useNeighborBrightness = !this.isDouble();
+		this.setCreativeTab(BreadStoneMod.tab);
 	}
 
 	@Override

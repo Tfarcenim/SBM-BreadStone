@@ -3,6 +3,7 @@
     "textures": {
         "bottom": "breadstone:blocks/stalebreadblock",
         "top": "breadstone:blocks/stalebreadblock",
-        "side": "breadstone:blocks/stalebreadblock"
+        "side": "breadstone:blocks/stalebreadblock",
+        "inventory": "breadstone:blocks/stalebreadblock"
     }
 }

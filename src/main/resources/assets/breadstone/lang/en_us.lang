@@ -4,6 +4,9 @@ itemGroup.BreadStone=Bread Stone
 
 #Base
 tile.stalebreadblock.name=Stale Bread Block
+tile.stalebreadslabhalf.name=Stale Bread Slab
+tile.stalebreadslabdouble.name=Stale Bread Double Slab
+tile.stalebreadslab.name=Stale Bread Slab
 
 #################ITEMS#######################
 
