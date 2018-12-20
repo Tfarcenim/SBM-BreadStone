@@ -16,16 +16,11 @@ public class ItemStaleBreadArmor extends ItemArmor {
 	public String nameExt = "";
 	
 	public ItemStaleBreadArmor(EntityEquipmentSlot slot, String nameExt) {
-		super(EnumHelper.addArmorMaterial("stalebread", "stalebread", 15, new int[]{1, 4, 5, 2}, 12, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F), -1, slot);
+		super(EnumHelper.addArmorMaterial("stalebread", "breadstone:stalebread", 15, new int[]{1, 4, 5, 2}, 12, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F), -1, slot);
 		this.nameExt = nameExt;
 		this.setRegistryName("stalebread" + nameExt);
 		this.setUnlocalizedName("stalebread" + nameExt);
 		this.setCreativeTab(BreadStoneMod.tab);
-	}
-
-	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
-		return super.getArmorTexture(stack, entity, slot, type).replaceAll("minecraft", Ref.MOD_ID);
 	}
 	
 	
