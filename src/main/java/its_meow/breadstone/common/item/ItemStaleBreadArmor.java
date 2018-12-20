@@ -23,4 +23,11 @@ public class ItemStaleBreadArmor extends ItemArmor {
 		this.setCreativeTab(BreadStoneMod.tab);
 	}
 
+	@Override
+	public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
+		return super.getArmorTexture(stack, entity, slot, type).replaceAll("minecraft", Ref.MOD_ID);
+	}
+	
+	
+
 }
