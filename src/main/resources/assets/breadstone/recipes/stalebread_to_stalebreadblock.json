@@ -1,0 +1,21 @@
+{
+    "_comment": [
+	    "Clumps stale bread together into a solid stone block"
+	],
+	"type": "minecraft:crafting_shaped",
+    "pattern": [
+		"XX",
+		"XX"
+    ],
+    "key": {
+        "X": {
+            "item": "breadstone:stalebread",
+            "data": 0
+        }
+    },
+	"result": {
+	    "item": "breadstone:stalebreadblock",
+		"data": 0,
+		"count": 1
+	}
+}
