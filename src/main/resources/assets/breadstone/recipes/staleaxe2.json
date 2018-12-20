@@ -1,0 +1,27 @@
+{
+    "_comment": [
+        "Clumps stale bread together into an axe"
+    ],
+    "type": "minecraft:crafting_shaped",
+    "group": "breadstone",
+    "pattern": [
+        "XX ",
+        "XS ",
+        " S "
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:stick",
+            "data": 0
+        },
+        "X": {
+            "item": "breadstone:stalebread",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "breadstone:stalebreadaxe",
+        "data": 0,
+        "count": 1
+    }
+}

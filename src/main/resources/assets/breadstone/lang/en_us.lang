@@ -1,3 +1,8 @@
 tile.stalebreadblock.name=Stale Bread Block
 item.stalebread.name=Stale Bread
 itemGroup.BreadStone=Bread Stone
+item.stalebreadsword.name=Stale Bread Sword
+item.stalebreadpickaxe.name=Stale Bread Pickaxe
+item.stalebreadaxe.name=Stale Bread Axe
+item.stalebreadshovel.name=Stale Bread Shovel
+item.stalebreadhoe.name=Stale Bread Hoe

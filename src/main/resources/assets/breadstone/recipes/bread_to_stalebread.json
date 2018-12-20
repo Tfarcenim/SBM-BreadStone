@@ -1,6 +1,6 @@
 {
     "_comment": [
-        "Clumps stale bread together into a solid stone block"
+        "Sand solidifes the bread into a brick-like material"
     ],
     "type": "minecraft:crafting_shapeless",
     "group": "breadstone",
