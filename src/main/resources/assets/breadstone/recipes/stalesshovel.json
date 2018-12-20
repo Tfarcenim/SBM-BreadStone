@@ -3,7 +3,7 @@
         "Clumps stale bread together into a shovel"
     ],
     "type": "minecraft:crafting_shaped",
-    "group": "breadstone",
+    "group": "breadstone:stalebread",
     "pattern": [
         " X ",
         " S ",

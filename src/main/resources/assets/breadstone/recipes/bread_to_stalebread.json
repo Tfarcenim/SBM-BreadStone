@@ -3,7 +3,7 @@
         "Sand solidifes the bread into a brick-like material"
     ],
     "type": "minecraft:crafting_shapeless",
-    "group": "breadstone",
+    "group": "minecraft:bread",
     "ingredients": [
            {
             "item": "minecraft:bread",

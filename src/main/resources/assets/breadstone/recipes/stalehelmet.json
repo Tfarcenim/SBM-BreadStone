@@ -1,26 +1,21 @@
 {
     "_comment": [
-        "Clumps stale bread together into a sword"
+        "Clumps stale bread together into a helmet"
     ],
     "type": "minecraft:crafting_shaped",
     "group": "breadstone:stalebread",
     "pattern": [
-        " X ",
-        " X ",
-        " S "
+        "XXX",
+        "X X"
     ],
     "key": {
-        "S": {
-            "item": "minecraft:stick",
-            "data": 0
-        },
         "X": {
             "item": "breadstone:stalebread",
             "data": 0
         }
     },
     "result": {
-        "item": "breadstone:stalebreadsword",
+        "item": "breadstone:stalebreadhelmet",
         "data": 0,
         "count": 1
     }
