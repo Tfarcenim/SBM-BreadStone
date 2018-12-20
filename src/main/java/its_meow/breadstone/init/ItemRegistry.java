@@ -5,6 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import its_meow.breadstone.common.item.ItemStaleBread;
+import its_meow.breadstone.common.item.ItemStaleBreadAxe;
+import its_meow.breadstone.common.item.ItemStaleBreadHoe;
+import its_meow.breadstone.common.item.ItemStaleBreadPickaxe;
+import its_meow.breadstone.common.item.ItemStaleBreadShovel;
+import its_meow.breadstone.common.item.ItemStaleBreadSword;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -17,6 +22,11 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class ItemRegistry {
 	
 	public static ItemStaleBread stalebread = new ItemStaleBread();
+	public static ItemStaleBreadSword stalebreadsword = new ItemStaleBreadSword();
+	public static ItemStaleBreadPickaxe stalebreadpickaxe = new ItemStaleBreadPickaxe();
+	public static ItemStaleBreadAxe stalebreadaxe = new ItemStaleBreadAxe();
+	public static ItemStaleBreadShovel stalebreadshovel = new ItemStaleBreadShovel();
+	public static ItemStaleBreadHoe stalebreadhoe = new ItemStaleBreadHoe();
 	
 	@Mod.EventBusSubscriber
 	public static class RegistrationHandler {
@@ -30,7 +40,12 @@ public class ItemRegistry {
 		@SubscribeEvent
 		public static void registerItems(final RegistryEvent.Register<Item> event) {
 			Item[] items = {
-					stalebread
+					stalebread,
+					stalebreadsword,
+					stalebreadpickaxe,
+					stalebreadaxe,
+					stalebreadshovel,
+					stalebreadhoe
 			};
 			final IForgeRegistry<Item> registry = event.getRegistry();
 
@@ -43,6 +58,11 @@ public class ItemRegistry {
 		@SubscribeEvent
 		public static void registerItemBlockModels(final ModelRegistryEvent event) {
 			initModel(stalebread, 0);
+			initModel(stalebreadsword, 0);
+			initModel(stalebreadpickaxe, 0);
+			initModel(stalebreadaxe, 0);
+			initModel(stalebreadshovel, 0);
+			initModel(stalebreadhoe, 0);
 		}
 
 
