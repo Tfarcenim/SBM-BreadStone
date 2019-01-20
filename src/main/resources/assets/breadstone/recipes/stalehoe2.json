@@ -3,7 +3,7 @@
         "Clumps stale bread together into a hoe"
     ],
     "type": "minecraft:crafting_shaped",
-    "group": "breadstone:stalebread",
+    "group": "breadstone:stalebreadhoe",
     "pattern": [
         "XX ",
         " S ",

@@ -1,12 +1,9 @@
-package its_meow.breadstone.init;
-
-import java.util.HashSet;
-import java.util.Set;
+package com.builtbroken.breadstone.init;
 
 import com.google.common.base.Preconditions;
-
-import its_meow.breadstone.common.block.BlockStaleBread;
-import its_meow.breadstone.common.block.BlockStaleBreadSlab;
+import com.builtbroken.breadstone.BreadStoneMod;
+import com.builtbroken.breadstone.common.block.BlockStaleBread;
+import com.builtbroken.breadstone.common.block.BlockStaleBreadSlab;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -21,9 +18,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
 
-@ObjectHolder(its_meow.breadstone.Ref.MOD_ID)
+import java.util.HashSet;
+import java.util.Set;
+
+@ObjectHolder(BreadStoneMod.MOD_ID)
 public class BlockRegistry {
-	
+
 	public static BlockStaleBread stalebreadblock = new BlockStaleBread();
 	public static BlockStaleBreadSlab stalebreadslabhalf = new BlockStaleBreadSlab.Half();
 	public static BlockStaleBreadSlab stalebreadslabdouble = new BlockStaleBreadSlab.Double();
@@ -70,10 +70,10 @@ public class BlockRegistry {
 				registry.register(item.setRegistryName(registryName));
 				ITEM_BLOCKS.add(item);
 			}
-			
+
 			// Not of type ItemBlock
 			registry.register(new ItemSlab(stalebreadslabhalf, stalebreadslabhalf, stalebreadslabdouble).setRegistryName(stalebreadslabhalf.getRegistryName()));
-			
+
 		}
 
 		@SubscribeEvent

@@ -3,20 +3,19 @@
 	    "Clumps stale bread together into a solid stone block"
 	],
 	"type": "minecraft:crafting_shaped",
-	"group": "breadstone:stalebreadblock",
+	"group": "breadstone:stalebreadslabhalf",
     "pattern": [
-		"XX",
-		"XX"
+		"XXX"
     ],
     "key": {
         "X": {
-            "item": "breadstone:stalebread",
+            "item": "breadstone:stalebreadblock",
             "data": 0
         }
     },
 	"result": {
-	    "item": "breadstone:stalebreadblock",
+	    "item": "breadstone:stalebreadslabhalf",
 		"data": 0,
-		"count": 4
+		"count": 6
 	}
 }

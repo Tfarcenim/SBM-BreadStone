@@ -3,7 +3,7 @@
         "Clumps stale bread together into a helmet"
     ],
     "type": "minecraft:crafting_shaped",
-    "group": "breadstone:stalebread",
+    "group": "breadstone:stalebreadhelmet",
     "pattern": [
         "XXX",
         "X X"

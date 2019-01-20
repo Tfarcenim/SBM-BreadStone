@@ -3,7 +3,7 @@
         "Clumps stale bread together into a sword"
     ],
     "type": "minecraft:crafting_shaped",
-    "group": "breadstone:stalebread",
+    "group": "breadstone:stalebreadsword",
     "pattern": [
         " X ",
         " X ",

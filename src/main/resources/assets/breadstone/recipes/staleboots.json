@@ -3,7 +3,7 @@
         "Clumps stale bread together into boots"
     ],
     "type": "minecraft:crafting_shaped",
-    "group": "breadstone:stalebread",
+    "group": "breadstone:stalebreadboots",
     "pattern": [
         "X X",
         "X X"

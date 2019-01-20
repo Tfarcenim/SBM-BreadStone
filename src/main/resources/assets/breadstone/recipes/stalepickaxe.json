@@ -3,7 +3,7 @@
         "Clumps stale bread together into a pickaxe"
     ],
     "type": "minecraft:crafting_shaped",
-    "group": "breadstone:stalebread",
+    "group": "breadstone:stalebreadpickaxe",
     "pattern": [
         "XXX",
         " S ",

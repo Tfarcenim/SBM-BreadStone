@@ -1,9 +1,7 @@
-package its_meow.breadstone.common.block;
+package com.builtbroken.breadstone.common.block;
 
-import java.util.Random;
-
-import its_meow.breadstone.BreadStoneMod;
-import its_meow.breadstone.init.BlockRegistry;
+import com.builtbroken.breadstone.BreadStoneMod;
+import com.builtbroken.breadstone.init.BlockRegistry;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -16,29 +14,31 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import java.util.Random;
+
 public abstract class BlockStaleBreadSlab extends BlockSlab {
 
 	public static final PropertyEnum<Variant> VARIANT = PropertyEnum.<Variant>create("variant", Variant.class);
-	
+
 	public BlockStaleBreadSlab(String ext) {
 		super(Material.ROCK);
 		this.setRegistryName("stalebreadslab" + ext);
-		this.setUnlocalizedName("stalebreadslab" + ext);
-		
+		this.setTranslationKey("stalebreadslab" + ext);
+
 		IBlockState iblockstate = this.blockState.getBaseState().withProperty(VARIANT, Variant.DEFAULT);
-		
+
 		if(!this.isDouble()) {
 			iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
 		}
-		
+
 		this.setDefaultState(iblockstate);
 		this.useNeighborBrightness = !this.isDouble();
 		this.setCreativeTab(BreadStoneMod.tab);
 	}
 
 	@Override
-	public String getUnlocalizedName(int meta) {
-		return super.getUnlocalizedName();
+	public String getTranslationKey(int meta) {
+		return super.getTranslationKey();
 	}
 
 	@Override
@@ -54,33 +54,33 @@ public abstract class BlockStaleBreadSlab extends BlockSlab {
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return Item.getItemFromBlock(BlockRegistry.stalebreadslabhalf);
 	}
-	
+
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
 		return new ItemStack(BlockRegistry.stalebreadslabhalf);
 	}
-	
+
 	@Override
 	public final IBlockState getStateFromMeta(final int meta) {
 		IBlockState blockstate = this.blockState.getBaseState().withProperty(VARIANT, Variant.DEFAULT);
-		
+
 		if(!this.isDouble()) {
 			blockstate = blockstate.withProperty(HALF, ((meta&8)!=0)?EnumBlockHalf.TOP:EnumBlockHalf.BOTTOM);
 		}
-		
+
 		return blockstate;
 	}
-	
+
 	@Override
 	public final int getMetaFromState(final IBlockState state) {
 		int meta = 0;
-		
+
 		if(!this.isDouble()&& state.getValue(HALF)==EnumBlockHalf.TOP) {
 			meta |= 8;
 		}
-		
+
 		return meta;
 	}
-	
+
 	@Override
 	protected BlockStateContainer createBlockState() {
 		if(!this.isDouble()){
@@ -88,7 +88,7 @@ public abstract class BlockStaleBreadSlab extends BlockSlab {
 		}
 		return new BlockStateContainer(this, new IProperty[] {VARIANT});
 	}
-	
+
 	public static class Double extends BlockStaleBreadSlab
 	{
 
@@ -116,7 +116,7 @@ public abstract class BlockStaleBreadSlab extends BlockSlab {
 		}
 
 	}
-	
+
 	public static enum Variant implements IStringSerializable
 	{
 		DEFAULT;
