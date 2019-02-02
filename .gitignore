@@ -20,3 +20,11 @@ build
 # other
 eclipse
 run
+
+output/
+
+changelog\.html
+
+CompiledWith\.txt
+
+SBM-Bread-Stone\.txt

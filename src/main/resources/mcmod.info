@@ -7,8 +7,8 @@
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["its_meow, DarkCow, BuiltBrokenModding"],
-  "credits": "BuiltBrokenModding/DarkCow: Creator, its_meow: Programmer",
+  "authorList": ["its_meow, DarkCow"],
+  "credits": "its_meow: Developer, DarkCow: Owner, BuiltBrokenModding: Commission giver",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
