@@ -1,0 +1,27 @@
+itemGroup.BreadStone=Bread Stone
+
+################BLOCKS#######################
+
+#Base
+tile.stalebreadblock.name=Bloc de pain rassis
+tile.stalebreadslabhalf.name=Dalle de pain rassis
+tile.stalebreadslabdouble.name=Double dalle de pain rassis
+tile.stalebreadslab.name=Dalle de pain rassis
+
+#################ITEMS#######################
+
+#Base
+item.stalebread.name=Pain rassis
+
+#Tools
+item.stalebreadsword.name=Épée en pain rassis
+item.stalebreadpickaxe.name=Pioche en pain rassis
+item.stalebreadaxe.name=Hache en pain rassis
+item.stalebreadshovel.name=Pelle en pain rassis
+item.stalebreadhoe.name=Houe en pain rassis
+
+#Armor
+item.stalebreadhelmet.name=Casque en pain rassis
+item.stalebreadchestplate.name=Plastron en pain rassis
+item.stalebreadleggings.name=Jambières en pain rassis
+item.stalebreadboots.name=Bottes en pain rassis
