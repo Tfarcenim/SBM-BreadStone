@@ -1,0 +1,27 @@
+itemGroup.BreadStone=Bread Stone
+
+################BLOCKS#######################
+
+#Base
+tile.stalebreadblock.name=Abgestandener Brotblock
+tile.stalebreadslabhalf.name=Abgestandene Brotstufe
+tile.stalebreadslabdouble.name=Abgestandene Brotdoppelstufe
+tile.stalebreadslab.name=Abgestandene Brotstufe
+
+#################ITEMS#######################
+
+#Base
+item.stalebread.name=Abgestandenes Brot
+
+#Tools
+item.stalebreadsword.name=Abgestandenes Brotschwert
+item.stalebreadpickaxe.name=Abgestandene Brotspitzhacke
+item.stalebreadaxe.name=Abgestandene Brotaxt
+item.stalebreadshovel.name=Abgestandene Brotschaufel
+item.stalebreadhoe.name=Abgestandene Brothacke
+
+#Armor
+item.stalebreadhelmet.name=Abgestandener Brothelm
+item.stalebreadchestplate.name=Abgestandener Brotharnisch
+item.stalebreadleggings.name=Abgestandener Brotbeinschutz
+item.stalebreadboots.name=Abgestandene Brotstiefel
