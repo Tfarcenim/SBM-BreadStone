@@ -34,6 +34,7 @@ public abstract class BlockStaleBreadSlab extends BlockSlab {
 		this.setDefaultState(iblockstate);
 		this.useNeighborBrightness = !this.isDouble();
 		this.setCreativeTab(BreadStoneMod.tab);
+		this.setHardness(4.0F);
 	}
 
 	@Override
