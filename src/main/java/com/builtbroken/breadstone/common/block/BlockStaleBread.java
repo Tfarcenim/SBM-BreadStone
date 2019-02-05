@@ -11,6 +11,7 @@ public class BlockStaleBread extends Block {
 		this.setRegistryName("stalebreadblock");
 		this.setTranslationKey("stalebreadblock");
 		this.setCreativeTab(BreadStoneMod.tab);
+		this.setHardness(4.0F);
 	}
 
 }
