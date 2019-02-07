@@ -25,3 +25,7 @@ item.stalebreadhelmet.name=Stale Bread Helmet
 item.stalebreadchestplate.name=Stale Bread Chestplate
 item.stalebreadleggings.name=Stale Bread Leggings
 item.stalebreadboots.name=Stale Bread Boots
+
+#Misc
+item.stalebreadarrow.name=Stale Bread Arrow
+entity.stalebreadarrow.name=Stale Bread Arrow

@@ -34,6 +34,9 @@ public class ItemRegistry
     public static ItemStaleBreadArmor stalebreadchestplate = new ItemStaleBreadArmor(EntityEquipmentSlot.CHEST, "chestplate");
     public static ItemStaleBreadArmor stalebreadleggings = new ItemStaleBreadArmor(EntityEquipmentSlot.LEGS, "leggings");
     public static ItemStaleBreadArmor stalebreadboots = new ItemStaleBreadArmor(EntityEquipmentSlot.FEET, "boots");
+    
+    //Misc
+    public static ItemStaleBreadArrow stalebreadarrow = new ItemStaleBreadArrow();
 
     @Mod.EventBusSubscriber
     public static class RegistrationHandler
@@ -58,7 +61,8 @@ public class ItemRegistry
                     stalebreadhelmet,
                     stalebreadchestplate,
                     stalebreadleggings,
-                    stalebreadboots
+                    stalebreadboots,
+                    stalebreadarrow
             };
             final IForgeRegistry<Item> registry = event.getRegistry();
 
@@ -85,6 +89,8 @@ public class ItemRegistry
             initModel(stalebreadchestplate, 0);
             initModel(stalebreadleggings, 0);
             initModel(stalebreadboots, 0);
+            // Misc
+            initModel(stalebreadarrow, 0);
         }
 
 
