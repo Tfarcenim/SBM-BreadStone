@@ -4,22 +4,22 @@ import com.builtbroken.breadstone.BreadStoneMod;
 import com.builtbroken.breadstone.client.renderer.entity.RenderStaleBreadArrow;
 import com.builtbroken.breadstone.common.entity.EntityBreadArrow;
 
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
-@SideOnly(Side.CLIENT)
-@EventBusSubscriber(modid = BreadStoneMod.MOD_ID, value = Side.CLIENT)
+@OnlyIn(Dist.CLIENT)
+@EventBusSubscriber(modid = BreadStoneMod.MOD_ID, value = Dist.CLIENT, bus = Bus.MOD)
 public class ClientEventDoer {
-	
 
-    @SideOnly(Side.CLIENT)
-    @SubscribeEvent
-    public static void registerEntityRenderers(final ModelRegistryEvent event) {
-    	RenderingRegistry.registerEntityRenderingHandler(EntityBreadArrow.class, RenderStaleBreadArrow::new);
-    }
-	
+	@OnlyIn(Dist.CLIENT)
+	@SubscribeEvent
+	public static void registerEntityRenderers(final ModelRegistryEvent event) {
+		RenderingRegistry.registerEntityRenderingHandler(EntityBreadArrow.class, RenderStaleBreadArrow::new);
+	}
+
 }

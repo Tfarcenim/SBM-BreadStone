@@ -1,11 +1,6 @@
 {
-    "forge_marker": 1,
-    "variants": {
-        "normal": [{
-           "model": "breadstone:stalebreadblock"
-        }],
-        "inventory": [{
-           "model": "breadstone:stalebreadblock"
-        }]
-    }
+  "forge_marker": 1,
+  "variants": {
+    "": { "model": "breadstone:stalebreadblock" }
+  }
 }

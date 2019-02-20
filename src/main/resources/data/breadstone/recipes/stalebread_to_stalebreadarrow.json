@@ -11,21 +11,17 @@
     ],
     "key": {
         "B": {
-            "item": "breadstone:stalebread",
-            "data": 0
+            "item": "breadstone:stalebread"
         },
         "S": {
-            "item": "minecraft:stick",
-            "data": 0
+            "item": "minecraft:stick"
         },
         "F": {
-            "item": "minecraft:feather",
-            "data": 0
+            "item": "minecraft:feather"
         }
     },
     "result": {
         "item": "breadstone:stalebreadarrow",
-        "data": 0,
         "count": 1
     }
 }

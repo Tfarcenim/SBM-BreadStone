@@ -1,42 +1,43 @@
 package com.builtbroken.breadstone;
 
-import net.minecraft.creativetab.CreativeTabs;
+import com.builtbroken.breadstone.client.renderer.entity.RenderStaleBreadArrow;
+import com.builtbroken.breadstone.common.entity.EntityBreadArrow;
+
 import net.minecraft.init.Items;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-@Mod(modid = BreadStoneMod.MOD_ID, name = BreadStoneMod.NAME, version = BreadStoneMod.VERSION, acceptedMinecraftVersions = BreadStoneMod.acceptedMCV)
-public class BreadStoneMod
-{
+@Mod(BreadStoneMod.MOD_ID)
+public class BreadStoneMod {
 
-    public static final String MOD_ID = "BreadStone";
-    public static final String NAME = "Bread Stone";
-    public static final String VERSION = "1.1.0";
-    public static final String acceptedMCV = "[1.12,1.13)";
+	public static final String MOD_ID = "breadstone";
 
-    @Instance(MOD_ID)
-    public static BreadStoneMod mod;
+	private static ItemGroup group;
 
-    public static CreativeTabs tab = new CreativeTabs("breadstone")
-    {
-        @Override
-        public ItemStack createIcon()
-        {
-            return new ItemStack(Items.BREAD);
-        }
-    };
+	public static BreadStoneMod mod;
 
-    public static Logger logger;
+	public BreadStoneMod() {
+		MinecraftForge.EVENT_BUS.addListener(this::onModelRegistry);
+	}
 
+	public static ItemGroup getItemGroup() {
+		if (group == null) {
+			group = new ItemGroup(MOD_ID) {
+				@Override
+				public ItemStack createIcon() {
+					return new ItemStack(Items.BREAD);
+				}
+			};
+		}
+		return group;
+	}
 
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
-        logger = LogManager.getLogger("breadstone");
-    }
+	public void onModelRegistry(ModelRegistryEvent event) {
+		RenderingRegistry.registerEntityRenderingHandler(EntityBreadArrow.class, manager -> new RenderStaleBreadArrow(manager));
+	}
+
 }
