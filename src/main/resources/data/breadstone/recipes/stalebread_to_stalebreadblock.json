@@ -10,13 +10,11 @@
     ],
     "key": {
         "X": {
-            "item": "breadstone:stalebread",
-            "data": 0
+            "item": "breadstone:stalebread"
         }
     },
 	"result": {
 	    "item": "breadstone:stalebreadblock",
-		"data": 0,
 		"count": 4
 	}
 }

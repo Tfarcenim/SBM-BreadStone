@@ -6,17 +6,14 @@
     "group": "breadstone:stalebread",
     "ingredients": [
            {
-            "item": "minecraft:bread",
-            "data": 0
+            "item": "minecraft:bread"
         },
         {
-            "item": "minecraft:sand",
-            "data": 0
+            "item": "minecraft:sand"
         }
     ],
     "result": {
         "item": "breadstone:stalebread",
-        "data": 0,
         "count": 1
     }
 }

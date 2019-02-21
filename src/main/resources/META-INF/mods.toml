@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[25,)"
+[[mods]]
+  modId="breadstone"
+  version="1.1.0"
+  displayName="Bread Stone"
+  authors="DarkCow"
+  description='''
+  Bread Tools
+  '''
+[[dependencies.breadstone]]
+    modId="forge"
+    mandatory=true
+    versionRange="[25,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.breadstone]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.13.2]"
+    ordering="NONE"
+    side="BOTH"

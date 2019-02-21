@@ -1,0 +1,19 @@
+{
+    "itemGroup.breadstone": "[SBM] Breadstone",
+	"block.breadstone.stalebreadblock": "Stale Bread Block",
+	"block.breadstone.stalebreadslabhalf": "Stale Bread Slab",
+    "block.breadstone.stalebreadslabdouble": "Stale Bread Double Slab",
+    "block.breadstone.stalebreadslab": "Stale Bread Slab",
+	"item.breadstone.stalebread": "Stale Bread",
+    "item.breadstone.stalebreadsword": "Stale Bread Sword",
+    "item.breadstone.stalebreadpickaxe": "Stale Bread Pickaxe",
+    "item.breadstone.stalebreadaxe": "Stale Bread Axe",
+    "item.breadstone.stalebreadshovel": "Stale Bread Shovel",
+    "item.breadstone.stalebreadhoe": "Stale Bread Hoe",
+    "item.breadstone.stalebreadhelmet": "Stale Bread Helmet",
+    "item.breadstone.stalebreadchestplate": "Stale Bread Chestplate",
+    "item.breadstone.stalebreadleggings": "Stale Bread Leggings",
+    "item.breadstone.stalebreadboots": "Stale Bread Boots",
+    "item.breadstone.stalebreadarrow": "Stale Bread Arrow",
+    "entity.breadstone.stalebreadarrow": "Stale Bread Arrow"
+}
