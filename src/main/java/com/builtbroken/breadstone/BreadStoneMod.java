@@ -1,23 +1,41 @@
 package com.builtbroken.breadstone;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
+import com.builtbroken.breadstone.client.renderer.entity.RenderStaleBreadArrow;
+import com.builtbroken.breadstone.common.entity.EntityBreadArrow;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod(modid = BreadStoneMod.MOD_ID, name = BreadStoneMod.NAME, version = BreadStoneMod.VERSION)
-public class BreadStoneMod
-{
-    public static final String MOD_ID = "breadstone";
-    public static final String NAME = "[SBM] Bread Stone";
-    public static final String VERSION = "1.1.0";
+@Mod(BreadStoneMod.MOD_ID)
+public class BreadStoneMod {
 
-    public static CreativeTabs tab = new CreativeTabs("breadstone")
-    {
-        @Override
-        public ItemStack createIcon()
-        {
-            return new ItemStack(Items.BREAD);
-        }
-    };
+	public static final String MOD_ID = "breadstone";
+
+	private static ItemGroup group;
+
+	public static BreadStoneMod mod;
+
+	public BreadStoneMod() {
+		MinecraftForge.EVENT_BUS.addListener(this::onModelRegistry);
+	}
+
+	public static ItemGroup getItemGroup() {
+		if (group == null) {
+			group = new ItemGroup(MOD_ID) {
+				@Override
+				public ItemStack createIcon() {
+					return new ItemStack(Items.BREAD);
+				}
+			};
+		}
+		return group;
+	}
+
+	public void onModelRegistry(ModelRegistryEvent event) {
+		RenderingRegistry.registerEntityRenderingHandler(EntityBreadArrow.class, RenderStaleBreadArrow::new);
+	}
 }

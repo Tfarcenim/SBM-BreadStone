@@ -1,61 +1,64 @@
 package com.builtbroken.breadstone.init;
 
-
 import com.builtbroken.breadstone.BreadStoneMod;
 import com.builtbroken.breadstone.common.item.*;
-import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.Properties;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.registries.IForgeRegistry;
 
-import java.util.HashSet;
-import java.util.Set;
+public class ItemRegistry {
 
-@Mod.EventBusSubscriber(modid = BreadStoneMod.MOD_ID)
-public class ItemRegistry
-{
-    public static Item stalebread;
+	public static ItemStaleBread stalebread = new ItemStaleBread();
 
-    // Tools
-    public static ItemStaleBreadSword stalebreadsword = new ItemStaleBreadSword(); //TODO replace with new ItemSword()
-    public static ItemStaleBreadPickaxe stalebreadpickaxe = new ItemStaleBreadPickaxe(); //TODO replace with new
-    public static ItemStaleBreadAxe stalebreadaxe = new ItemStaleBreadAxe(); //TODO replace with new
-    public static ItemStaleBreadShovel stalebreadshovel = new ItemStaleBreadShovel(); //TODO replace with new
-    public static ItemStaleBreadHoe stalebreadhoe = new ItemStaleBreadHoe();  //TODO replace with new
+	// Tools
+	public static ItemStaleBreadSword stalebreadsword = new ItemStaleBreadSword();
+	public static ItemStaleBreadPickaxe stalebreadpickaxe = new ItemStaleBreadPickaxe();
+	public static ItemStaleBreadAxe stalebreadaxe = new ItemStaleBreadAxe();
+	public static ItemStaleBreadShovel stalebreadshovel = new ItemStaleBreadShovel();
+	public static ItemStaleBreadHoe stalebreadhoe = new ItemStaleBreadHoe();
 
-    // Armor
-    public static ItemStaleBreadArmor stalebreadhelmet = new ItemStaleBreadArmor(EntityEquipmentSlot.HEAD, "helmet");
-    public static ItemStaleBreadArmor stalebreadchestplate = new ItemStaleBreadArmor(EntityEquipmentSlot.CHEST, "chestplate");
-    public static ItemStaleBreadArmor stalebreadleggings = new ItemStaleBreadArmor(EntityEquipmentSlot.LEGS, "leggings");
-    public static ItemStaleBreadArmor stalebreadboots = new ItemStaleBreadArmor(EntityEquipmentSlot.FEET, "boots");
+	// Armor
+	public static ItemStaleBreadArmor stalebreadhelmet = new ItemStaleBreadArmor(EquipmentSlotType.HEAD, "helmet");
+	public static ItemStaleBreadArmor stalebreadchestplate = new ItemStaleBreadArmor(EquipmentSlotType.CHEST, "chestplate");
+	public static ItemStaleBreadArmor stalebreadleggings = new ItemStaleBreadArmor(EquipmentSlotType.LEGS, "leggings");
+	public static ItemStaleBreadArmor stalebreadboots = new ItemStaleBreadArmor(EquipmentSlotType.FEET, "boots");
 
-    //Misc
-    public static ItemStaleBreadArrow stalebreadarrow = new ItemStaleBreadArrow();
+	//Misc
+	public static ItemStaleBreadArrow stalebreadarrow = new ItemStaleBreadArrow();
 
-    public static final Set<Item> ITEMS = new HashSet<>();
+	private static Properties ITEM_PROPS;
 
-    /**
-     * Register this mod's {@link Item}s.
-     *
-     * @param event The event
-     */
-    @SubscribeEvent
-    public static void registerItems(final RegistryEvent.Register<Item> event)
-    {
-        event.getRegistry().register(stalebread = new Item()
-                .setRegistryName("stalebread")
-                .setTranslationKey("stalebread")
-                .setCreativeTab(BreadStoneMod.tab));
-        event.getRegistry().register(stalebreadsword);
-        event.getRegistry().register(stalebreadpickaxe);
-        event.getRegistry().register(stalebreadaxe);
-        event.getRegistry().register(stalebreadshovel);
-        event.getRegistry().register(stalebreadhoe);
-        event.getRegistry().register(stalebreadhelmet);
-        event.getRegistry().register(stalebreadchestplate);
-        event.getRegistry().register(stalebreadleggings);
-        event.getRegistry().register(stalebreadboots);
-        event.getRegistry().register(stalebreadarrow);
-    }
+	public static Properties getProps() {
+		if (ITEM_PROPS == null) {
+			ITEM_PROPS = new Properties().group(BreadStoneMod.getItemGroup());
+		}
+		return ITEM_PROPS;
+	}
+
+	@Mod.EventBusSubscriber(modid = BreadStoneMod.MOD_ID, bus = Bus.MOD)
+	public static class RegistrationHandler {
+
+		/**
+		 * Register this mod's {@link Item}s.
+		 *
+		 * @param event The event
+		 */
+		@SubscribeEvent
+		public static void registerItems(final RegistryEvent.Register<Item> event) {
+			Item[] items = {
+					stalebread, stalebreadsword, stalebreadpickaxe, stalebreadaxe, stalebreadshovel, stalebreadhoe, stalebreadhelmet, stalebreadchestplate, stalebreadleggings, stalebreadboots, stalebreadarrow
+			};
+			final IForgeRegistry<Item> registry = event.getRegistry();
+
+			for (final Item item : items) {
+				registry.register(item);
+			}
+		}
+	}
+
 }

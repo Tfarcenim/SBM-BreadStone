@@ -2,41 +2,39 @@ package com.builtbroken.breadstone.init;
 
 import com.builtbroken.breadstone.BreadStoneMod;
 import com.builtbroken.breadstone.common.entity.EntityBreadArrow;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.ResourceLocation;
+
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.EntityEntry;
-import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
-import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.registries.ObjectHolder;
 
-@EventBusSubscriber(modid = BreadStoneMod.MOD_ID)
-public class EntityRegistry
-{
+public class EntityRegistry {
 
-    private static int modEntities = 0;
+	@ObjectHolder(BreadStoneMod.MOD_ID+":breadstonearrowentity")
+	public static EntityType<EntityBreadArrow> STALEBREAD_ARROW;
 
-    /**
-     * Register this mod's {@link EntityEntry}s.
-     *
-     * @param event The event
-     */
-    @SubscribeEvent
-    public static void onEvent(final RegistryEvent.Register<EntityEntry> event)
-    {
-        final IForgeRegistry<EntityEntry> registry = event.getRegistry();
+	@EventBusSubscriber(modid = BreadStoneMod.MOD_ID, bus = Bus.MOD)
+	public static class RegistrationHandler {
+		/**
+		 * Register this mod's {@link EntityType}s.
+		 *
+		 * @param event The event
+		 */
+		@SubscribeEvent
+		public static void onEvent(final RegistryEvent.Register<EntityType<?>> event) {
 
-        registry.register(buildEntry(EntityBreadArrow.class, "stalebreadarrow"));
-    }
+			event.getRegistry().register(			EntityType.Builder
+							.create(EntityClassification.MISC)
+							.setUpdateInterval(1)
+							.setShouldReceiveVelocityUpdates(true)
+							.setTrackingRange(128)
+							.setCustomClientFactory(((spawnEntity, world) -> STALEBREAD_ARROW.create(world)))
+							.build(BreadStoneMod.MOD_ID+":breadstonearrowentity")
+							.setRegistryName(BreadStoneMod.MOD_ID+":breadstonearrowentity"));
+		}
+	}
 
-    public static EntityEntry buildEntry(Class<? extends Entity> EntityClass, String entityNameIn)
-    {
-        return EntityEntryBuilder.create()
-                .entity(EntityClass)
-                .id(new ResourceLocation(BreadStoneMod.MOD_ID, entityNameIn), modEntities++)
-                .name(entityNameIn)
-                .tracker(128, 1, true)
-                .build();
-    }
 }

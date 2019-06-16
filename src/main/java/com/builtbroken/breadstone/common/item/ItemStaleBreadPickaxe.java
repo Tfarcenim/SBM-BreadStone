@@ -1,15 +1,16 @@
 package com.builtbroken.breadstone.common.item;
 
 import com.builtbroken.breadstone.BreadStoneMod;
-import net.minecraft.item.ItemPickaxe;
+import com.builtbroken.breadstone.init.ItemRegistry;
 
-public class ItemStaleBreadPickaxe extends ItemPickaxe {
+import net.minecraft.item.ItemTier;
+import net.minecraft.item.PickaxeItem;
+
+public class ItemStaleBreadPickaxe extends PickaxeItem {
 
 	public ItemStaleBreadPickaxe() {
-		super(ToolMaterial.STONE);
-		this.setRegistryName("stalebreadpickaxe");
-		this.setTranslationKey("stalebreadpickaxe");
-		this.setCreativeTab(BreadStoneMod.tab);
+		super(ItemTier.STONE, 1, -3.2F, ItemRegistry.getProps());
+		this.setRegistryName(BreadStoneMod.MOD_ID, "stalebreadpickaxe");
 	}
 
 }

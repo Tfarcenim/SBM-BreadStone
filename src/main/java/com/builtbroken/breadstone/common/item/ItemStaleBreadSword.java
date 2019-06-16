@@ -1,15 +1,16 @@
 package com.builtbroken.breadstone.common.item;
 
 import com.builtbroken.breadstone.BreadStoneMod;
-import net.minecraft.item.ItemSword;
+import com.builtbroken.breadstone.init.ItemRegistry;
 
-public class ItemStaleBreadSword extends ItemSword {
+import net.minecraft.item.ItemTier;
+import net.minecraft.item.SwordItem;
+
+public class ItemStaleBreadSword extends SwordItem {
 
 	public ItemStaleBreadSword() {
-		super(ToolMaterial.STONE);
-		this.setRegistryName("stalebreadsword");
-		this.setTranslationKey("stalebreadsword");
-		this.setCreativeTab(BreadStoneMod.tab);
+		super(ItemTier.STONE, 7, -3.2F, ItemRegistry.getProps());
+		this.setRegistryName(BreadStoneMod.MOD_ID, "stalebreadsword");
 	}
 
 }

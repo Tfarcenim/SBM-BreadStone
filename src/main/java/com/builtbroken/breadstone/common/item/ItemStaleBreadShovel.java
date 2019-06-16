@@ -1,15 +1,16 @@
 package com.builtbroken.breadstone.common.item;
 
 import com.builtbroken.breadstone.BreadStoneMod;
-import net.minecraft.item.ItemSpade;
+import com.builtbroken.breadstone.init.ItemRegistry;
 
-public class ItemStaleBreadShovel extends ItemSpade {
+import net.minecraft.item.ItemTier;
+import net.minecraft.item.ShovelItem;
+
+public class ItemStaleBreadShovel extends ShovelItem {
 
 	public ItemStaleBreadShovel() {
-		super(ToolMaterial.STONE);
-		this.setRegistryName("stalebreadshovel");
-		this.setTranslationKey("stalebreadshovel");
-		this.setCreativeTab(BreadStoneMod.tab);
+		super(ItemTier.STONE, 7.0F, -3.2F, ItemRegistry.getProps());
+		this.setRegistryName(BreadStoneMod.MOD_ID, "stalebreadshovel");
 	}
 
 }
